@@ -1,0 +1,74 @@
+{
+  "prendas": [
+    {
+      "id": 1,
+      "nombre": "Camiseta básica",
+      "precio": 15.99,
+      "categoria": "Camisetas",
+      "url": "https://img.freepik.com/free-photo/brunette-man-posing-with-hands-waist-t-shirt-looking-merry-front-view_176474-64663.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Jeans ajustados",
+      "precio": 29.99,
+      "categoria": "Pantalones",
+      "url": "https://img.freepik.com/free-photo/denims_1303-4490.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Sudadera con capucha",
+      "precio": 24.99,
+      "categoria": "Sudaderas",
+      "url": "https://img.freepik.com/free-photo/cute-girl-with-cowl-laughing_23-2147633741.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Vestido estampado floral",
+      "precio": 39.99,
+      "categoria": "Vestidos",
+      "url": "https://img.freepik.com/free-photo/positive-passionate-lady-dress-with-hand-hair_23-2148054938.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Chaqueta de cuero",
+      "precio": 79.99,
+      "categoria": "Chaquetas",
+      "url": "https://img.freepik.com/free-photo/man-with-leather-jacket-with-his-arms-crossed_1368-3057.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Calcetines deportivos (paquete de 3)",
+      "precio": 12.99,
+      "categoria": "Calcetines",
+      "url": "https://img.freepik.com/free-photo/socks-isolated_1203-7004.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Polo clásico",
+      "precio": 19.99,
+      "categoria": "Polos",
+      "url": "https://img.freepik.com/free-photo/menswear-polo-shirt-white-casual-apparel-outdoor-shoot_53876-125339.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Falda plisada",
+      "precio": 34.99,
+      "categoria": "Faldas",
+      "url": "https://img.freepik.com/free-photo/girl-posing-with-sea-background-seaport_1157-1508.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Abrigo de invierno",
+      "precio": 89.99,
+      "categoria": "Abrigos",
+      "url": "https://img.freepik.com/free-photo/image-magnetic-cheerful-female-with-black-hair-hugging-herself_176532-7488.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Gorra de béisbol",
+      "precio": 9.99,
+      "categoria": "Accesorios",
+      "url": "https://img.freepik.com/free-photo/view-baseball-cap_23-2151023612.jpg"
+    }
+  ]
+}

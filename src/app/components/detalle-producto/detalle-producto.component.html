@@ -1,0 +1,15 @@
+<div class="container">
+    <h2 style="text-align: center; margin: 20px;">Prenda</h2>
+    <div class="card mx-auto" style="width:380px;">
+      <img class="card-img-top" src={{prenda.url}} alt="Card image" style="width:100%">
+      <div class="card-body text">
+        <h4 class="card-title">{{prenda.nombre}}</h4>
+        <p class="card-title">Categoria: {{prenda.categoria}}</p>
+        <p class="card-text">Precio: {{prenda.precio}} $</p>
+      </div>
+      <br>
+    <button class="btn btn-success" [routerLink]="['/productos']">Regresar</button>
+    
+    
+</div>
+

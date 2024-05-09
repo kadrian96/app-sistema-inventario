@@ -1,0 +1,249 @@
+ <!--Carousel-->
+ <div
+ id="carouselExampleCaptions"
+ class="carousel slide"
+ data-bs-ride="carousel"
+>
+ <div class="carousel-indicators">
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="0"
+     class="active"
+     aria-current="true"
+     aria-label="Slide 1"
+   ></button>
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="1"
+     aria-label="Slide 2"
+   ></button>
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="2"
+     aria-label="Slide 3"
+   ></button>
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="3"
+     aria-label="Slide 4"
+   ></button>
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="4"
+     aria-label="Slide 5"
+   ></button>
+   <button
+     type="button"
+     data-bs-target="#carouselExampleCaptions"
+     data-bs-slide-to="5"
+     aria-label="Slide 6"
+   ></button>
+ </div>
+ <div class="carousel-inner">
+   <div class="carousel-item active" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel26.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen1"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Viste elegante</h5>
+         <p>
+           Escoge tus prendas favoritas para estar siempre listo para la
+           ocacion.
+         </p>
+       </div>
+     </div>
+   </div>
+   <div class="carousel-item" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel25.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen2"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Escoge tu estilo</h5>
+         <p>Encuentra de nuestra amplia seleccion tu estilo favorito</p>
+       </div>
+     </div>
+   </div>
+   <div class="carousel-item" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel24.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen3"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Sorprende a todos</h5>
+         <p>Escoge tus camisas, ternos y zapatos para toda ocacion.</p>
+       </div>
+     </div>
+   </div>
+   <div class="carousel-item" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel23.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen3"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Descubre nuestros descuentos</h5>
+         <p>Tenemos descuentos de hasta el 30% en ropa de mujer.</p>
+       </div>
+     </div>
+   </div>
+   <div class="carousel-item" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel22.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen3"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Viste a la ultima tendencia</h5>
+         <p>Encuentra nuestras nuevas prendas en tendencia.</p>
+       </div>
+     </div>
+   </div>
+   <div class="carousel-item" data-bs-interval="5000">
+     <img
+       src="/assets/images/carousel21.png"
+       width="1600"
+       height="400"
+       class="d-block w-100"
+       alt="Imagen3"
+     />
+     <div class="overlay">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>Accesorios</h5>
+         <p>
+           Descubre nuestra gran variedad de accesorios y encuentra el
+           ideal para tus outfits.
+         </p>
+       </div>
+     </div>
+   </div>
+ </div>
+ <button
+   class="carousel-control-prev"
+   type="button"
+   data-bs-target="#carouselExampleCaptions"
+   data-bs-slide="prev"
+ >
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Previous</span>
+ </button>
+ <button
+   class="carousel-control-next"
+   type="button"
+   data-bs-target="#carouselExampleCaptions"
+   data-bs-slide="next"
+ >
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Next</span>
+ </button>
+</div>
+ <!--Main-->
+
+ <main>
+    <!--cards-->
+    <br />
+    <div class="encabezado">
+      <h2>¡Bienvenido a tu tienda favorita!</h2>
+      <p>
+        donde el estilo y la comodidad se fusionan para crear tu look
+        perfecto! Entra y descubre una amplia selección de prendas
+        cuidadosamente seleccionadas para satisfacer todos tus gustos y
+        necesidades.
+      </p>
+    </div>
+
+    <section class="card-container">
+      <div class="card text-bg-light mb-3" style="max-width: 640px">
+        <a [routerLink]="['/ofertas']">
+            <img
+            src="../../../assets/images/sale-img.png"
+            class="card-img-top"
+            alt="Sale"
+          />
+        </a>
+       
+        <div class="card-body">
+          <h5 class="card-title">Ofertas y descuentos</h5>
+          <p class="card-text">
+            Aprovecha nuestros descuentos en ropa de hombre y mujer por esta
+            temporada
+          </p>
+          <p class="card-text">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="card-container">
+      <div class="card text-bg-light mb-3" style="max-width: 640px">
+        <a [routerLink]="['/productos']">
+            <img
+            src="/assets/images/ropa-mujer.jpg"
+            class="card-img-top"
+            alt="Ropa Mujer"
+          />
+        </a>
+       
+        <div class="card-body">
+          <h5 class="card-title">Ropa de Mujer</h5>
+          <p class="card-text">
+            Elige tus prendas favoritas de nuestra amplia seleccion
+          </p>
+          <p class="card-text">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="card-container">
+      <div class="card text-bg-light mb-3" style="max-width: 640px">
+        <a [routerLink]="['/productos']">
+            <img
+            src="/assets/images/ropa-hombre.jpg"
+            class="card-img-top"
+            alt="Ropa hombre"
+          />
+        </a>
+       
+        <div class="card-body">
+          <h5 class="card-title">Ropa de Hombre</h5>
+          <p class="card-text">
+            Viste para toda la ocasion y sorprende a los demas
+          </p>
+          <p class="card-text">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <br />
+  </main>
+
+

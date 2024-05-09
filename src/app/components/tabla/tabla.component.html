@@ -1,0 +1,67 @@
+
+
+<div class="container" style=" margin-top: 40px ;flex: 1; flex-direction: row;">
+    <h4>Filtrar:</h4>
+    <label style="margin-right: 5px; color: SteelBlue">Precio Minimo:</label>
+    <input type="number"   name="valorMinimo" [(ngModel)]="ValorMinimo">
+    <span style="margin-inline: 10px;"></span>
+    <label style="margin-right: 5px; color: SteelBlue">Precio Maximo:</label>
+    <input type="number"  name="valorMaximo" [(ngModel)]="ValorMaximo">
+    <span style="margin-inline: 40px;"></span>
+    <label style="margin-right: 5px; color: SteelBlue">Categoria:</label>
+    <select name="" id="" [(ngModel)] ='categoria'>
+        <option value="seleccione" >seleccione</option>
+        <option value="Camisetas">Camisetas</option>
+        <option value="Pantalones">Pantalones</option>
+        <option value="Sudaderas">Sudaderas</option>
+        <option value="Vestidos">Vestidos</option>
+        <option value="Chaquetas">Chaquetas</option>
+        <option value="Calcetines">Calcetines</option>
+        <option value="Polos">Polos</option>
+        <option value="Faldas">Faldas</option>
+        <option value="Abrigos">Abrigos</option>
+        <option value="Accesorios">Accesorios</option>
+      </select>
+   
+</div><br>
+    
+
+<hr>
+<div class="row">
+    @for (item of prendas; track item) {
+        @if( (item.precio < ValorMaximo && item.precio > ValorMinimo) || item.categoria==categoria ){
+            <div class="col-md-3">
+                <div class="card" style="width:280px;">
+                    <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                    <div class="card-body text">
+                      <h4 class="card-title">{{item.nombre}}</h4>
+                      <p class="card-title">Categoria: {{item.categoria}}</p>
+                      <p class="card-text">Precio: {{item.precio}} $</p>
+                      <button class="btn btn-primary" [routerLink]="['/productos',item.id]">Detalles</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+        }@else if (ValorMaximo==undefined && ValorMinimo==undefined && categoria=='seleccione') {
+            <div class="col-md-3">
+                <div class="card" style="width:280px;">
+                    <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                    <div class="card-body text">
+                      <h4 class="card-title">{{item.nombre}}</h4>
+                      <p class="card-title">Categoria: {{item.categoria}}</p>
+                      <p class="card-text">Precio: {{item.precio}} $</p>
+                      <button class="btn btn-primary" [routerLink]="['/productos',item.id]">Detalles</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+        }
+
+    
+}
+</div>
+
+
+
