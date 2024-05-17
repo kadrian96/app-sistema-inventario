@@ -26,42 +26,56 @@
 </div><br>
     
 
-<hr>
-<div class="row">
-    @for (item of prendas; track item) {
-        @if( (item.precio < ValorMaximo && item.precio > ValorMinimo) || item.categoria==categoria ){
-            <div class="col-md-3">
-                <div class="card" style="width:280px;">
-                    <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
-                    <div class="card-body text">
-                      <h4 class="card-title">{{item.nombre}}</h4>
-                      <p class="card-title">Categoria: {{item.categoria}}</p>
-                      <p class="card-text">Precio: {{item.precio}} $</p>
-                      <button class="btn btn-primary" [routerLink]="['/productos',item.id]">Detalles</button>
+<hr><br>
+<div class="container">
+    <div class="row">
+        @for (item of prendas; track item) {
+            @if( (item.precio < ValorMaximo && item.precio > ValorMinimo) || item.categoria==categoria ){
+                <div class="col-md-3 mb-4">
+                    <div class="card h100" style="width:280px;">
+                        <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                        <div class="card-body text">
+                          <h4 class="card-title">{{item.nombre}}</h4>
+                          <p class="card-title">Categoria: {{item.categoria}}</p>
+                          <p class="card-text">Precio: {{item.precio}} $</p>
+                          <div style=" display: flex; flex-direction: row;">
+                            <button class="btn btn-primary" style="margin-right: 20px;" [routerLink]="['/productos',item.id]">Detalles</button>
+                            @if(rol=='admin'){
+                              <button class="btn btn-warning" [routerLink]="['/formulario',item.id]">Editar</button>
+                            }
+                          </div>
+                        </div>
+                        
                     </div>
-                    
                 </div>
-            </div>
-
-        }@else if (ValorMaximo==undefined && ValorMinimo==undefined && categoria=='seleccione') {
-            <div class="col-md-3">
-                <div class="card" style="width:280px;">
-                    <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
-                    <div class="card-body text">
-                      <h4 class="card-title">{{item.nombre}}</h4>
-                      <p class="card-title">Categoria: {{item.categoria}}</p>
-                      <p class="card-text">Precio: {{item.precio}} $</p>
-                      <button class="btn btn-primary" [routerLink]="['/productos',item.id]">Detalles</button>
-                    </div>
-                    
-                </div>
-            </div>
-
-        }
-
     
-}
+            }@else if (ValorMaximo==undefined && ValorMinimo==undefined && categoria=='seleccione') {
+                <div class="col-md-3 mb-4">
+                    <div class="card h100" style="width:280px;">
+                        <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                        <div class="card-body text">
+                          <h4 class="card-title">{{item.nombre}}</h4>
+                          <p class="card-title">Categoria: {{item.categoria}}</p>
+                          <p class="card-text">Precio: {{item.precio}} $</p>
+                          <div style=" display: flex; flex-direction: row;">
+                            <button class="btn btn-primary" style="margin-right: 20px;" [routerLink]="['/productos',item.id]">Detalles</button>
+                            @if(rol=='admin'){
+                              <button class="btn btn-warning" [routerLink]="['/formulario',item.id]">Editar</button>
+                            }
+                          </div>
+                         
+                        </div>
+                        
+                    </div>
+                </div>
+    
+            }
+    
+        
+    }
+    </div>
 </div>
+
 
 
 

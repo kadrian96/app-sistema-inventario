@@ -26,7 +26,7 @@ export class DetalleProductoComponent {
     this.ruta.params.subscribe(parametro =>{
       this.id=parametro['idProducto']
   
-      this.servicio.getPersonaUnica(this.id).subscribe(e=>{
+      this.servicio.getProductoUnico(this.id).subscribe(e=>{
         this.prenda=e;
       })
     

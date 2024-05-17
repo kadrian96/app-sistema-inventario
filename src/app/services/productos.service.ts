@@ -13,7 +13,7 @@ export class ProductosService {
 
 ////////// TRAER DATOS UNICOS /////////////
 
-getPersonaUnica(id:any): Observable<any>{
+getProductoUnico(id:any): Observable<any>{
   return this.http.get(`${this.API_PERSONAL}/${id}`)
 }
 
@@ -21,6 +21,14 @@ getPersonaUnica(id:any): Observable<any>{
   getPersonal(): Observable<any>{
     return this.http.get(this.API_PERSONAL)
   }
+
+  ////////// EDITAR - PUT ////////////////
+
+  putProducto(persona: any): Observable<any>{
+    return this.http.put(`${this.API_PERSONAL}/${persona.id}`,persona)
+  }
+
+
 
 
 

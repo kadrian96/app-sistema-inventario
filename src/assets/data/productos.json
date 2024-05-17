@@ -70,5 +70,19 @@
       "categoria": "Accesorios",
       "url": "https://img.freepik.com/free-photo/view-baseball-cap_23-2151023612.jpg"
     }
+  ],
+  "users": [
+    {
+      "email": "kevin@yop.com",
+      "password": "$2a$10$r0rs2lLdvPkp2ttMbgKQM.FA0O53qdF643MR24qVmIhVDcO3Yx7Zu",
+      "type": "admin",
+      "id": 1
+    },
+    {
+      "email": "henry@yop.com",
+      "password": "$2a$10$vpOjMsXWE68i/vgAZCWCZOndJRu4qnZ2IBMndlCR0EbM5rIRB9/Dy",
+      "type": "user",
+      "id": 2
+    }
   ]
 }

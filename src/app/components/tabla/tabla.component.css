@@ -1,0 +1,29 @@
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Define una altura fija para las imágenes */
+    object-fit: cover; /* Esto asegura que las imágenes se recorten en lugar de distorsionarse */
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 350px; /* Ajustar según la altura de tu tarjeta más alta */
+}
+
+.card-body {
+    flex: 1; /* Hace que el contenido del cuerpo se expanda */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title,
+.card-text {
+    margin-bottom: 0.5rem; /* Ajustar según sea necesario */
+}
+
+.card .btn {
+    align-self: flex-start; /* Centra el botón dentro del cuerpo */
+    margin-top: auto; /* Empuja el botón hacia el final del card-body */
+}

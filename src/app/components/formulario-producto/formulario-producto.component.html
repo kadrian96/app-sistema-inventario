@@ -1,0 +1,51 @@
+
+  <div class="container mt-5">
+    <div  class="card p-4 shadow-lg" style="max-width: 600px; margin: auto;">
+        <h3 class="text-center mb-4"> Editar Producto</h3>
+        <form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+            <input type="text" name="id" [(ngModel)]="producto.id" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" [(ngModel)]="producto.nombre" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio</label>
+             <input type="number" name="precio" [(ngModel)]="producto.precio" class="form-control"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Seleccione la categoria</label>
+            <select name="categoria" [(ngModel)]="producto.categoria" class="form-control">
+                <option value="Camisetas">Camisetas</option>
+                <option value="Pantalones">Pantalones</option>
+                <option value="Sudaderas">Sudaderas</option>
+                <option value="Vestidos">Vestidos</option>
+                <option value="Chaquetas">Chaquetas</option>
+                <option value="Calcetines">Calcetines</option>
+                <option value="Polos">Polos</option>
+                <option value="Faldas">Faldas</option>
+                <option value="Abrigos">Abrigos</option>
+                <option value="Accesorios">Accesorios</option>
+            </select>
+            </div>
+          
+            <div class="mb-3">
+                <label for="url" class="form-label">URL de Imagen</label>
+          <input type="text" name="url" [(ngModel)]="producto.url" class="form-control"/>
+            </div>
+          
+            
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success" style="margin-right: 20px;">Guardar</button>
+            <button [routerLink]="['/productos']" class="btn btn-danger">Cancelar</button>
+          </div>
+           
+          </form>
+    
+    </div>
+   
+    
+  </div>

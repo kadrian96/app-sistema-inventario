@@ -1,0 +1,51 @@
+.contacto {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+      .contacto {
+      padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+  }
+
+
+.contacto-info h2{
+  text-align: center;
+}
+
+
+.contacto-info h2 {
+    margin-bottom: 20px;
+}
+
+.contacto-info p {
+    margin-bottom: 10px;
+}
+
+.contacto-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacto-info ul li {
+    margin-bottom: 10px;
+}
+
+.mapa {
+    text-align: center;
+    /* width: 70%; */
+}
+@media (max-width: 768px) {
+      .mapa iframe {
+      width: 390px;
+      height: 380px;
+      border: none;
+    }
+  }
