@@ -7,10 +7,11 @@ import { Error404Component } from './pages/error404/error404.component';
 import { OfertasComponent } from './pages/ofertas/ofertas.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { LoginComponent } from './pages/login/login.component';
-import { loginGuard, perfilGuard } from './guards/login.guard';
+import { adminGuard, loginGuard, perfilGuard } from './guards/login.guard';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CarritoComponent } from './pages/carrito/carrito.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
+import { AgregarProductoComponent } from './pages/agregar-producto/agregar-producto.component';
 
 export const routes: Routes = [
 
@@ -24,6 +25,8 @@ export const routes: Routes = [
     { path: 'perfil', component: PerfilComponent, canActivate:[perfilGuard] },
     { path: 'carrito', component: CarritoComponent, canActivate:[perfilGuard] },
     {path: 'formulario/:idProducto', component:FormularioProductoComponent},
+    { path: 'agregar-producto', component: AgregarProductoComponent, canActivate:[adminGuard] },
+
 
 
     //redirecciones

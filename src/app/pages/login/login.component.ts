@@ -27,6 +27,11 @@ export class LoginComponent {
      if(this.token != ''){
        localStorage.setItem("acceso", 'true')
        localStorage.setItem("userId", u.user.id )
+       if(u.user.type=='admin'){
+        localStorage.setItem("admin", 'true')
+       }else{
+        localStorage.setItem("admin", 'false')
+       }
        ///this.ruta.navigateByUrl('privado')
        window.location.href = 'productos'
      }

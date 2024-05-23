@@ -1,0 +1,130 @@
+.fixed-size-img {
+  width: 250px; /* Puedes ajustar el ancho según sea necesario */
+  height: 250px; /* Puedes ajustar la altura según sea necesario */
+  object-fit: cover;
+  object-position: center; /* Centra la imagen dentro del contenedor */
+
+}
+.list-group-item {
+  border-radius: 10px;
+}
+.btn-block {
+  width: 100%;
+}
+.card-body h5 {
+  color: #333;
+  margin-bottom: 10px;
+}
+.card-body p {
+  margin: 0;
+  color: #555;
+}
+.list-group-item h5 {
+  margin: 0;
+}
+
+  /*Modal*/
+  .modal .modal-dialog {
+    max-width: 800px;
+  }
+  
+  .modal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #292921;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table .table {
+    background-color: #fff;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px;
+  }
+  
+  .table-borderless th,
+  .table-borderless td,
+  .table-borderless thead th,
+  .table-borderless tbody + tbody {
+    border: 0;
+  }
+  
+  .text-end {
+    text-align: end;
+  }
+ 
+  .modal-header {
+    background-color: SlateBlue;
+    color: white;
+  }
+  
+  .btn-close-white {
+    filter: invert(1);
+  }
+  
+  #pdfContent {
+    padding: 20px;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .table tfoot {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .text-end {
+    text-align: end;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  

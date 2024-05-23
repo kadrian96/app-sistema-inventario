@@ -27,9 +27,7 @@ style="background: linear-gradient(to right, #3f2b96, #87a6fa)"
       <li class="nav-item" style="font-size: 20px">
         <a class="nav-link" routerLink="productos">Productos</a>
       </li>
-      <li class="nav-item" style="font-size: 20px">
-        <a class="nav-link" routerLink="ofertas">Ofertas</a>
-      </li>
+      
       <li class="nav-item" style="font-size: 20px">
         <a class="nav-link" routerLink="nosotros">Nosotros</a>
       </li>
@@ -42,6 +40,12 @@ style="background: linear-gradient(to right, #3f2b96, #87a6fa)"
         </li>
        
       }@else {
+        @if (admin=='true') {
+          <li class="nav-item" style="font-size: 20px">
+            <a class="nav-link" routerLink="agregar-producto">Agregar Producto</a>
+          </li>
+
+        }
         <li class="nav-item" style="font-size: 20px">
           <a class="nav-link" routerLink="carrito">Carrito</a>
         </li>

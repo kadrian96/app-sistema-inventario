@@ -8,12 +8,12 @@ export const loginGuard: CanActivateFn = (route, state) => {
   }
 };
 
-export const registroGuard: CanMatchFn = (route, state) => {
+export const adminGuard: CanMatchFn = (route, state) => {
 
-  if( localStorage.getItem('acceso') == 'true' ){
-    return false
+  if( localStorage.getItem('admin') == 'true' ){
+    return true
   }else{
-    return true;
+    return false;
   }
 
 };

@@ -69,12 +69,19 @@
       "precio": 9.99,
       "categoria": "Accesorios",
       "url": "https://img.freepik.com/free-photo/view-baseball-cap_23-2151023612.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Chaqueta sintetica",
+      "precio": 49.99,
+      "categoria": "Chaquetas",
+      "url": "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg"
     }
   ],
   "users": [
     {
       "email": "kevin@yop.com",
-      "password": "$2a$10$r0rs2lLdvPkp2ttMbgKQM.FA0O53qdF643MR24qVmIhVDcO3Yx7Zu",
+      "password": "$2a$10$F18rycECOx9FEex5SBsqTObv7lqzA9MWj2LsIZPZDTTIHYaG1WMBS",
       "type": "admin",
       "id": 1
     },
@@ -83,6 +90,16 @@
       "password": "$2a$10$vpOjMsXWE68i/vgAZCWCZOndJRu4qnZ2IBMndlCR0EbM5rIRB9/Dy",
       "type": "user",
       "id": 2
+    }
+  ],
+  "carrito": [
+    {
+      "id": 1,
+      "nombre": "Camiseta básica",
+      "precio": 15.99,
+      "categoria": "Camisetas",
+      "url": "https://img.freepik.com/free-photo/brunette-man-posing-with-hands-waist-t-shirt-looking-merry-front-view_176474-64663.jpg",
+      "cantidad": 1
     }
   ]
 }

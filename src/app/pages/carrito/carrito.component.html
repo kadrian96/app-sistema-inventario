@@ -1,1 +1,99 @@
-<p>carrito works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <!-- Lista de productos -->
+    <div class="col-md-8">
+      <h3 class="mb-4">TU CARRITO <i class="fa-solid fa-cart-shopping"></i></h3>
+      <ul class="list-group mb-4">
+        <li class="list-group-item mb-3 shadow-sm border-0" *ngFor="let item of cartItems">
+          <div class="d-flex justify-content-between">
+            <div style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-5" style="margin-right: 20px">
+                  <img src="{{ item.url }}" class="img-fluid rounded-start fixed-size-img" alt="{{ item.nombre }}" />
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body" >
+                    <h5 class="card-title">{{ item.nombre }}</h5><br>
+                    <p class="card-text"><strong style="color: SteelBlue">ID:</strong> {{ item.id }}</p>
+                    <p class="card-text"><strong style="color: SteelBlue">Precio:</strong> {{ item.precio }} $</p>
+                    <p class="card-text"><strong style="color: SteelBlue">Categoria:</strong> {{ item.categoria }}</p>
+                    <p class="card-text"><strong style="color: SteelBlue">Cantidad:</strong> {{ item.cantidad }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="align-self-center">
+              <button class="btn btn-danger btn-sm" (click)="eliminarProducto(item.id)">Eliminar <i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Resumen de la compra -->
+    <div class="col-md-4">
+      <h3 class="mb-4">Resumen de orden</h3>
+      <ul class="list-group">
+        <li class="list-group-item shadow-sm border-0 mb-3">
+          <h5>Subtotal: {{ getSubtotal() }} $</h5>
+        </li>
+        <li class="list-group-item shadow-sm border-0 mb-3">
+          <h5 class="text-danger">Total: {{ getTotal() }} $</h5>
+        </li>
+        <li class="list-group-item shadow-sm border-0">
+          <button class="btn btn-success btn-block mb-3" (click)="openModal()">Proceder al Pago <i style="margin-left: 10px;" class="fa-solid fa-credit-card"></i></button>
+          <button class="btn btn-danger btn-block" (click)="vaciarCarrito()">Vaciar carrito <i style="margin-left: 10px;" class="fa-solid fa-trash-can"></i></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header  text-white">
+          <h5 class="modal-title" id="checkoutModalLabel">Detalle de la Factura</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="pdfContent" class="p-3">
+            <h3 class="text-center mb-4">Factura</h3>
+            <table class="table table-striped table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cartItems">
+                  <td>{{ item.nombre }}</td>
+                  <td>{{ item.cantidad }}</td>
+                  <td>{{ item.precio }} $</td>
+                  <td>{{ (item.precio * item.cantidad).toFixed(2) }} $</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" class="text-end"><strong>Subtotal</strong></td>
+                  <td>{{ getSubtotal().toFixed(2) }} $</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-end"><strong>Total</strong></td>
+                  <td>{{ getTotal().toFixed(2) }} $</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer ">
+          
+          <button type="button" class="btn btn-warning" (click)="generatePDF()">Generar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>

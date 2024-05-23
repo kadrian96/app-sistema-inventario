@@ -8,38 +8,43 @@
                 <h3>{{ usuario.type }}</h3><br>
                 <p class="text-muted"><label style="color: blue;" for="id" class="form-label">ID:</label> {{ usuario.id }}</p>
                 <p><label style="color: blue;" for="id" class="form-label">email:</label> {{ usuario.email }}</p>
-            </div>
-            <div *ngIf="isEditing">
-                <div class="mb-3">
-                    <label for="name" class="form-label">ID:</label>
-                    <input type="text" id="name" class="form-control" [(ngModel)]="usuario.id">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" id="email" class="form-control" [(ngModel)]="usuario.email">
-                </div>
-                <div class="mb-3">
-                    <label for="bio" class="form-label">Contraseña:</label>
-                    <input id="password" class="form-control" [(ngModel)]="password">
-                </div>
-            </div>
-            @if (isEditing) {
-                <button style="width: 120px;" class="btn btn-success mt-3">
-                    Guardar
-                </button><br>
-                <button style="width: 120px;" class="btn btn-danger mt-3"(click)="toggleEdit()">
-                    Cancelar
-                </button>
-
-            }@else {
                 <button style="width: 120px;" class="btn btn-success mt-3" (click)="toggleEdit()">
                     Editar
                 </button><br>
                 <button style="width: 120px;" class="btn btn-danger mt-3"(click)="cerrar()">
                     Cerrar Sesion
                 </button>
+            </div>
+            <div *ngIf="isEditing">
+                <form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+                    <div class="mb-3">
+                        <label>Ingresar Email</label>
+                    <input type="text" name="email" [(ngModel)]="usuario.email" class="form-control"/>
+                    </div>
 
-            }
+                    <div class="mb-3">
+                        <label>Ingresar Contraseña</label>
+                        <input type="text" name="password" [(ngModel)]="password" class="form-control"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Tipo de usuario</label>
+                    <input type="text" name="type" [(ngModel)]="usuario.type" class="form-control" readonly="readonly">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Ingresar ID</label>
+                        <input type="text" name="id" [(ngModel)]="usuario.id" class="form-control" readonly="readonly"/>
+                    </div>
+            
+                   
+                  <br>
+                    <button type="submit" class="btn btn-success" style="margin-right: 20px;">Guardar</button>
+                    <button (click)="toggleEdit()" class="btn btn-danger">Cancelar</button>
+                  </form>
+            
+            </div>
+          
             
            
         </div>

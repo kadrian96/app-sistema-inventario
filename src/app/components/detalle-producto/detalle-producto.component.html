@@ -1,15 +1,14 @@
-<div class="container">
-    <h2 style="text-align: center; margin: 20px;">{{prenda.nombre}}</h2>
-    <div class="card mx-auto" style="width:380px;">
-      <img class="card-img-top" src={{prenda.url}} alt="Card image" style="width:100%">
-      <div class="card-body text">
-        <p class="card-title">ID: {{prenda.id}}</p>
-        <p class="card-title">Categoria: {{prenda.categoria}}</p>
-        <p class="card-text">Precio: {{prenda.precio}} $</p>
+<div class="container my-5">
+ 
+  <div class="card mx-auto shadow-lg rounded" style="max-width: 380px;">
+      <img class="card-img-top rounded-top" src="{{prenda.url}}" alt="Imagen del producto" style="height: 300px; object-fit: cover;">
+      <div class="card-body text-center">
+          <h4 class="card-title">{{prenda.nombre}}</h4><br>
+          <h6 class="card-subtitle mb-2 text-muted">ID: {{prenda.id}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Categoría: {{prenda.categoria}}</h6>
+          <p class="card-text">Precio: <strong>{{prenda.precio}} $</strong></p>
+          <button class="btn btn-success mt-3" [routerLink]="['/productos']">Regresar</button>
       </div>
-      <br>
-    <button class="btn btn-success" [routerLink]="['/productos']">Regresar</button>
-    
-    
+  </div>
 </div>
 

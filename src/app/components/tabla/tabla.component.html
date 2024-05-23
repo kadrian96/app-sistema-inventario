@@ -1,16 +1,20 @@
 
 
-<div class="container" style=" margin-top: 40px ;flex: 1; flex-direction: row;">
-    <h4>Filtrar:</h4>
-    <label style="margin-right: 5px; color: SteelBlue">Precio Minimo:</label>
-    <input type="number"   name="valorMinimo" [(ngModel)]="ValorMinimo">
-    <span style="margin-inline: 10px;"></span>
-    <label style="margin-right: 5px; color: SteelBlue">Precio Maximo:</label>
-    <input type="number"  name="valorMaximo" [(ngModel)]="ValorMaximo">
-    <span style="margin-inline: 40px;"></span>
-    <label style="margin-right: 5px; color: SteelBlue">Categoria:</label>
-    <select name="" id="" [(ngModel)] ='categoria'>
-        <option value="seleccione" >seleccione</option>
+<div class="container mt-5">
+  <h4 class="mb-3">Filtrar:</h4>
+  <div class="filter-group d-flex flex-wrap align-items-center">
+    <div class="filter-item me-4 mb-2">
+      <label for="valorMinimo" class="form-label text-field">Precio Mínimo:</label>
+      <input type="number" id="valorMinimo" name="valorMinimo" class="form-control" [(ngModel)]="ValorMinimo">
+    </div>
+    <div class="filter-item me-4 mb-2">
+      <label for="valorMaximo" class="form-label text-field">Precio Máximo:</label>
+      <input type="number" id="valorMaximo" name="valorMaximo" class="form-control" [(ngModel)]="ValorMaximo">
+    </div>
+    <div class="filter-item mb-2">
+      <label for="categoria" class="form-label text-field">Categoría:</label>
+      <select id="categoria" name="categoria" class="form-select" [(ngModel)]="categoria">
+        <option value="seleccione">Seleccione</option>
         <option value="Camisetas">Camisetas</option>
         <option value="Pantalones">Pantalones</option>
         <option value="Sudaderas">Sudaderas</option>
@@ -22,28 +26,47 @@
         <option value="Abrigos">Abrigos</option>
         <option value="Accesorios">Accesorios</option>
       </select>
-   
+    </div>
+  </div>
 </div><br>
     
 
-<hr><br>
+<hr ><br>
 <div class="container">
     <div class="row">
         @for (item of prendas; track item) {
             @if( (item.precio < ValorMaximo && item.precio > ValorMinimo) || item.categoria==categoria ){
                 <div class="col-md-3 mb-4">
                     <div class="card h100" style="width:280px;">
-                        <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                      <a [routerLink]="['/productos', item.id]" class="card-link" style="text-decoration: none; color: inherit;">
+                        <div class="image-container">
+                          <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                          <div class="overlay">
+                            <div class="detalletxt">Ver detalles</div>
+                          </div>
+                        </div>
+                       
+                      </a>
+                        
                         <div class="card-body text">
                           <h4 class="card-title">{{item.nombre}}</h4>
                           <p class="card-title">Categoria: {{item.categoria}}</p>
                           <p class="card-text">Precio: {{item.precio}} $</p>
-                          <div style=" display: flex; flex-direction: row;">
-                            <button class="btn btn-primary" style="margin-right: 20px;" [routerLink]="['/productos',item.id]">Detalles</button>
-                            @if(rol=='admin'){
-                              <button class="btn btn-warning" [routerLink]="['/formulario',item.id]">Editar</button>
-                            }
-                          </div>
+                          @if(acceso=='true'){
+                            <div style=" display: flex; flex-direction: row;">
+                              <button class="btn btn-primary" style="margin-right: 20px;" (click)="addtoCart(item)">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
+                              
+                            </div>
+
+                          }
+                          
+                          @if(rol=='admin'){
+                            <div style=" display: flex; flex-direction: row; margin: 5px 0px;">
+                              <button class="btn btn-warning" style="margin-right: 10px;" [routerLink]="['/formulario',item.id]">Editar</button>
+                              <button class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button>
+                            </div>
+                           
+                          }
                         </div>
                         
                     </div>
@@ -51,18 +74,36 @@
     
             }@else if (ValorMaximo==undefined && ValorMinimo==undefined && categoria=='seleccione') {
                 <div class="col-md-3 mb-4">
+                  
                     <div class="card h100" style="width:280px;">
-                        <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                      <a [routerLink]="['/productos', item.id]" class="card-link" style="text-decoration: none; color: inherit;">
+                        <div class="image-container">
+                          <img class="card-img-top" src={{item.url}} alt="Card image" style="width:100%">
+                          <div class="overlay">
+                            <div class="detalletxt">Ver detalles</div>
+                          </div>
+                        </div>
+                        
+                      </a>
+                       
                         <div class="card-body text">
                           <h4 class="card-title">{{item.nombre}}</h4>
                           <p class="card-title">Categoria: {{item.categoria}}</p>
                           <p class="card-text">Precio: {{item.precio}} $</p>
-                          <div style=" display: flex; flex-direction: row;">
-                            <button class="btn btn-primary" style="margin-right: 20px;" [routerLink]="['/productos',item.id]">Detalles</button>
-                            @if(rol=='admin'){
-                              <button class="btn btn-warning" [routerLink]="['/formulario',item.id]">Editar</button>
-                            }
-                          </div>
+                          @if(acceso=='true'){
+                            <div style=" display: flex; flex-direction: row;">
+                              <button class="btn btn-primary" style="margin-right: 20px;" (click)="addtoCart(item)">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
+                              
+                            </div>
+
+                          }
+                          @if(rol=='admin'){
+                            <div style=" display: flex; flex-direction: row; margin: 5px 0px;">
+                              <button class="btn btn-warning" style="margin-right: 10px;" [routerLink]="['/formulario',item.id]">Editar</button>
+                              <button class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button>
+                            </div>
+                           
+                          }
                          
                         </div>
                         
